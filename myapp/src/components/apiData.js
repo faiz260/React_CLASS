@@ -1,29 +1,31 @@
-import React,{useEffect, useState} from 'react';
+import React, { useEffect, useState } from "react";
 
 function ApiData() {
+  const [repos, setRepos] = useState([]);
 
-    // const [repos, setRepos] = useState([{}]);
-    
-    useEffect(()=>{
+  useEffect(() => {
+    const api = async () => {
+      const data = await fetch("https://api.github.com/users/faiz260/repos");
+      const response = await data.json();
+      //   console.log(response);
 
-        const api = async () => {
-            const data = await fetch('https://api.github.com/users/faiz260/repos')
-            const response = await data.json();
-            console.log(response)
-        } 
-        api();
+      setRepos(response);
+    };
+    api();
+  }, []);
 
-    }, [])
-    
-    
-     
-    return (
-        <div>
-            <h1> API Data </h1>
+  //   console.log(repos)
 
-
-        </div>
-    )
+  return (
+    <div>
+      <h1> API Data </h1>
+      <ul>
+        {repos.map((data) => {
+          return <li>{data.name}</li>;
+        })}
+      </ul>
+    </div>
+  );
 }
 
-export default ApiData
+export default ApiData;
