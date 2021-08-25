@@ -3,6 +3,7 @@ import ApiData from "./components/apiData";
 import Forms from "./components/forms";
 import Hello from "./components/hello";
 import List from "./components/List";
+import MaterialUiComponent from "./components/materialUiComponent";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       /> */}
       {/* <List /> */}
       {/* <Forms /> */}
-      <ApiData />
+      {/* <ApiData /> */}
+      <MaterialUiComponent />
     </div>
   );
 }
