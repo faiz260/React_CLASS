@@ -5,7 +5,6 @@ import CounterContext from "./CounterContext";
 // context API
 
 function App() {
-
   const count = useState(0);
 
   return (

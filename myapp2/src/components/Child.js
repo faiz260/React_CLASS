@@ -4,6 +4,9 @@ import counterContext from "../CounterContext";
 function Child() {
   const counterValue = useContext(counterContext);
 
+  const arr = [1, 2, 3];
+  console.log(arr[1]);
+
   console.log("CHILD CONSOLE", counterValue);
 
   return (
@@ -13,6 +16,7 @@ function Child() {
       <button
         onClick={() => {
           counterValue[1](++counterValue[0]);
+          // setCount(++count)
         }}
       >
         Increment
